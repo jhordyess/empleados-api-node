@@ -12,6 +12,8 @@ npm i -D prisma && npx prisma init && npm pkg set scripts.build:db="prisma migra
 npm pkg set prisma.seed="node prisma/seed.js"
 touch prisma/seed.js
 
+npm i swagger-ui-express
+
 mkdir -p \
   src/controllers \
   src/middlewares \
@@ -46,4 +48,5 @@ touch \
 touch \
   src/middlewares/requestValidator.js \
   src/middlewares/auth.js \
+  src/middlewares/swagger.js \
   src/middlewares/index.js
