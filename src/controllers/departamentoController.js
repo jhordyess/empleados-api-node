@@ -72,7 +72,7 @@ export const crearDepartamento = async (req, res, next) => {
 
       if (!data) throw new HttpError('Departamento no creado', 500, false)
 
-      res.status(200).json({
+      res.status(201).json({
         message: 'Departamento creado correctamente',
         data
       })

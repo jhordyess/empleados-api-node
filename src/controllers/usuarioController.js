@@ -42,7 +42,7 @@ export const register = async (req, res, next) => {
 
       const token = jwt.sign(data.id, SECRET)
 
-      res.status(200).json({
+      res.status(201).json({
         data: {
           ...data,
           token
