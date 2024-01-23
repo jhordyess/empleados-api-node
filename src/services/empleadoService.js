@@ -75,7 +75,8 @@ export const listarEmpleados = async (query, callback) => {
         departamento: {
           select: {
             id: true,
-            nombre: true
+            nombre: true,
+            descripcion: true
           }
         }
       },
@@ -137,7 +138,8 @@ export const empleadoById = async (id, callback) => {
         departamento: {
           select: {
             id: true,
-            nombre: true
+            nombre: true,
+            descripcion: true
           }
         }
       }
@@ -207,7 +209,8 @@ export const crearEmpleado = async (
         departamento: {
           select: {
             id: true,
-            nombre: true
+            nombre: true,
+            descripcion: true
           }
         }
       }
@@ -285,7 +288,8 @@ export const modificarEmpleado = async (
         departamento: {
           select: {
             id: true,
-            nombre: true
+            nombre: true,
+            descripcion: true
           }
         }
       }

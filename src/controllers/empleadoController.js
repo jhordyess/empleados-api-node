@@ -72,7 +72,7 @@ export const crearEmpleado = async (req, res, next) => {
 
         if (!data) throw new HttpError('Empleado no creado', 500, false)
 
-        res.status(200).json({
+        res.status(201).json({
           message: 'Empleado creado correctamente',
           data
         })

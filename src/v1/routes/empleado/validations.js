@@ -73,6 +73,7 @@ export const crearEmpleadoCheck = [
   body('dptoId')
     .notEmpty()
     .withMessage('Departamento es requerido')
+    .bail()
     .isInt({ min: 1 })
     .withMessage('Departamento debe ser un número entero mayor a 0')
     .toInt()
