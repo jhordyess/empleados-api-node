@@ -77,39 +77,35 @@ export const departamentoById = async (id, callback) => {
 
 export const empleadosByDepartamento = async (id, callback) => {
   try {
-    const departamento = await prisma.departamento.findUnique({
+    const exists = await departamentoActiveExists(id)
+    if (!exists) throw new HttpError('Departamento no encontrado', 404)
+
+    const empleados = await prisma.empleado.findMany({
       where: {
-        id,
-        activo: true
+        activo: true,
+        departamentoId: id
       },
       select: {
-        empleados: {
+        id: true,
+        persona: {
           select: {
-            id: true,
-            activo: true,
-            persona: {
-              select: {
-                nombre: true,
-                apellidoPaterno: true,
-                apellidoMaterno: true,
-                fechaNacimiento: true,
-                direccion: true,
-                telefono: true
-              }
-            }
+            nombre: true,
+            apellidoPaterno: true,
+            apellidoMaterno: true,
+            fechaNacimiento: true,
+            direccion: true,
+            telefono: true
           }
         }
       }
     })
 
-    if (!departamento) throw new HttpError('Departamento no encontrado', 404)
-
-    const empleados = departamento.empleados.map(({ persona, ...empleado }) => ({
+    const empleadosMap = empleados.map(({ persona, ...empleado }) => ({
       ...empleado,
       ...persona
     }))
 
-    callback(null, empleados)
+    callback(null, empleadosMap)
   } catch (error) {
     callback(error)
   } finally {
