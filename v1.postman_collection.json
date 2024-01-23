@@ -1,0 +1,2395 @@
+{
+	"info": {
+		"_postman_id": "65a4cd74-4f61-443c-aaf2-a5442746b39f",
+		"name": "v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20955361"
+	},
+	"item": [
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Listar empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/empleados?sort=apellidoPaterno",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"empleados"
+							],
+							"query": [
+								{
+									"key": "dptoId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "apellidoPaterno"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/empleados"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "631"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"277-lxJ6dT1ES0QVf6p6bVqKLVpSum4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 18:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"departamento\": {\n                \"id\": 1,\n                \"nombre\": \"TI\"\n            },\n            \"nombre\": \"Juan\",\n            \"apellidoPaterno\": \"Perez\",\n            \"apellidoMaterno\": \"Gomez\",\n            \"fechaNacimiento\": \"1990-01-01T00:00:00.000Z\",\n            \"direccion\": \"Calle 1\",\n            \"telefono\": \"1234567890\"\n        },\n        {\n            \"id\": 2,\n            \"departamento\": {\n                \"id\": 3,\n                \"nombre\": \"Transporte\"\n            },\n            \"nombre\": \"José\",\n            \"apellidoPaterno\": \"Castillo\",\n            \"apellidoMaterno\": \"Gomez\",\n            \"fechaNacimiento\": \"1999-01-01T00:00:00.000Z\",\n            \"direccion\": \"Calle 2\",\n            \"telefono\": null\n        },\n        {\n            \"id\": 3,\n            \"departamento\": {\n                \"id\": 1,\n                \"nombre\": \"TI\"\n            },\n            \"nombre\": \"Rosario\",\n            \"apellidoPaterno\": \"Santillan\",\n            \"apellidoMaterno\": \"Perez\",\n            \"fechaNacimiento\": \"2000-05-01T00:00:00.000Z\",\n            \"direccion\": \"Calle 2\",\n            \"telefono\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "200 Empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/empleados"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFAlOux7Kcr/ZEgGkn2r+oFAbu4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:59:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": []\n}"
+						},
+						{
+							"name": "200 Query params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/empleados?dptoId=1&page=1&limit=1&sort=apellidoPaterno",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"empleados"
+									],
+									"query": [
+										{
+											"key": "dptoId",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "search",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "apellidoPaterno"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dd-Zjdju2lt97Td5/rC68jBcOsSWDc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jan 2024 00:43:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"departamento\": {\n                \"id\": 1,\n                \"nombre\": \"Desarrollo\"\n            },\n            \"nombre\": \"German\",\n            \"apellidoPaterno\": \"Marquez\",\n            \"apellidoMaterno\": \"Smith\",\n            \"fechaNacimiento\": \"1997-12-01T00:00:00.000Z\",\n            \"direccion\": \"Calle 13\",\n            \"telefono\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "200 Dpto. s/empleados",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/empleados?dptoId=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"empleados"
+									],
+									"query": [
+										{
+											"key": "dptoId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFAlOux7Kcr/ZEgGkn2r+oFAbu4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jan 2024 00:34:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": []\n}"
+						},
+						{
+							"name": "400 Invalid dpto. ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/empleados?dptoId=1k",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"empleados"
+									],
+									"query": [
+										{
+											"key": "dptoId",
+											"value": "1k"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-yARLsDfy8feATnGiTwZc1T8pwhI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jan 2024 00:33:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"dptoId debe ser un número entero mayor a 0\"\n}"
+						},
+						{
+							"name": "404 No dpto",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/empleados?dptoId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"empleados"
+									],
+									"query": [
+										{
+											"key": "dptoId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RLd7u52cFfHqedApLzSTMwaLMV4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 15:44:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento no encontrado\"\n}"
+						},
+						{
+							"name": "400 Invalid query params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/empleados?page=1k&limit=1k&sort=apellidoPaternos",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"empleados"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1k"
+										},
+										{
+											"key": "limit",
+											"value": "1k"
+										},
+										{
+											"key": "sort",
+											"value": "apellidoPaternos"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b7-GjcbgIKlEG+WnF/JbgeKLQ9Jgts\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jan 2024 00:44:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"page debe ser un número entero mayor a 0, limit debe ser un número entero mayor a 0, sort debe ser nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento o nombreDpto\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Crear empleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"German\",\n  \"apellidoPaterno\": \"Marquez\",\n  \"apellidoMaterno\": \"Smith\",\n  \"fechaNacimiento\": \"1997-12-01\",\n  \"direccion\": \"Calle 13\",\n  \"dptoId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/empleados"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"German\",\n  \"apellidoPaterno\": \"Marquez\",\n  \"apellidoMaterno\": \"Smith\",\n  \"fechaNacimiento\": \"1997-12-01\",\n  \"direccion\": \"Calle 13\",\n  \"dptoId\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"105-c9DJNoccoWccDNAx6x4b4TsK6pg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 18:46:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Empleado creado correctamente\",\n    \"data\": {\n        \"id\": 4,\n        \"departamento\": {\n            \"id\": 4,\n            \"nombre\": \"Logística\"\n        },\n        \"nombre\": \"German\",\n        \"apellidoPaterno\": \"Marquez\",\n        \"apellidoMaterno\": \"Smith\",\n        \"fechaNacimiento\": \"1997-12-01T00:00:00.000Z\",\n        \"direccion\": \"Calle 13\",\n        \"telefono\": null\n    }\n}"
+						},
+						{
+							"name": "400 No body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-bVYHyhqJikPvFRYeIxlVyLIOOB4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 18:46:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Nombre, apellido paterno, apellido materno y fecha de nacimiento son requeridos\"\n}"
+						},
+						{
+							"name": "404 No dpto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"Juan\",\n  \"apellidoPaterno\": \"Perez\",\n  \"apellidoMaterno\": \"Gomez\",\n  \"fechaNacimiento\": \"1990-01-01\",\n  \"direccion\": \"Calle 1\",\n  \"telefono\": \"1234567890\",\n  \"dptoId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RLd7u52cFfHqedApLzSTMwaLMV4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 15:52:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener empleado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/empleados/1"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/empleados/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-bcCrSoUHfb6rAtvJD1q8Tf+u9j8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:19:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"departamento\": {\n            \"id\": 1,\n            \"nombre\": \"TI\"\n        },\n        \"nombre\": \"Juan\",\n        \"apellidoPaterno\": \"Perez\",\n        \"apellidoMaterno\": \"Gomez\",\n        \"fechaNacimiento\": \"1990-01-01T00:00:00.000Z\",\n        \"direccion\": \"Calle 1\",\n        \"telefono\": \"1234567890\"\n    }\n}"
+						},
+						{
+							"name": "404 Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/empleados/1123"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-MiL6/MJy5AJuH4XBBULq8jNz1zI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:15:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Empleado no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Modificar empleado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"German\",\n  \"apellidoPaterno\": \"Rodriguez\",\n  \"apellidoMaterno\": \"Castillo\",\n  \"fechaNacimiento\": \"1997-12-01\",\n  \"direccion\": \"Calle 13\",\n  \"dptoId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/empleados/1"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"German\",\n  \"apellidoPaterno\": \"Rodriguez\",\n  \"apellidoMaterno\": \"Castillo\",\n  \"fechaNacimiento\": \"1997-12-01\",\n  \"direccion\": \"Calle 13\",\n  \"dptoId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-4sDof3mUs8krdWBle2FW6vqMz40\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:28:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Empleado modificado correctamente\",\n    \"data\": {\n        \"id\": 1,\n        \"departamento\": {\n            \"id\": 2,\n            \"nombre\": \"Marketing\"\n        },\n        \"nombre\": \"German\",\n        \"apellidoPaterno\": \"Rodriguez\",\n        \"apellidoMaterno\": \"Castillo\",\n        \"fechaNacimiento\": \"1997-12-01T00:00:00.000Z\",\n        \"direccion\": \"Calle 13\",\n        \"telefono\": \"1234567890\"\n    }\n}"
+						},
+						{
+							"name": "400 No body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados/1234"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-bVYHyhqJikPvFRYeIxlVyLIOOB4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:21:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Nombre, apellido paterno, apellido materno y fecha de nacimiento son requeridos\"\n}"
+						},
+						{
+							"name": "404 No dpto",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"German\",\n  \"apellidoPaterno\": \"Rodriguez\",\n  \"apellidoMaterno\": \"Castillo\",\n  \"fechaNacimiento\": \"1997-12-01\",\n  \"direccion\": \"Calle 13\",\n  \"dptoId\": 2123\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados/1"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RLd7u52cFfHqedApLzSTMwaLMV4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:34:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento no encontrado\"\n}"
+						},
+						{
+							"name": "404 No empleado",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"German\",\n  \"apellidoPaterno\": \"Rodriguez\",\n  \"apellidoMaterno\": \"Castillo\",\n  \"fechaNacimiento\": \"1997-12-01\",\n  \"direccion\": \"Calle 13\",\n  \"dptoId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/empleados/231"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-MiL6/MJy5AJuH4XBBULq8jNz1zI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:41:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Empleado no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/empleados/1"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}/empleados/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-utPCUaeoBGOzYfRJwqrgcKFsDAU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:42:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Empleado eliminado correctamente\"\n}"
+						},
+						{
+							"name": "404 No empleado",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}/empleados/3213"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-MiL6/MJy5AJuH4XBBULq8jNz1zI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 19:42:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Empleado no encontrado\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "{{token}}"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Departamento",
+			"item": [
+				{
+					"name": "Listar departamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/departamentos?page=1&limit=10&sort=nombre",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"departamentos"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "nombre"
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/departamentos"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-VaVWlRumLoKbCGNh/hrb8ypMaC4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Jan 2024 20:34:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Desarrollo\",\n            \"descripcion\": \"Departamento de desarrollo\"\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"Recursos Humanos\",\n            \"descripcion\": \"Departamento de recursos humanos\"\n        },\n        {\n            \"id\": 3,\n            \"nombre\": \"Ventas\",\n            \"descripcion\": \"Departamento de ventas\"\n        },\n        {\n            \"id\": 4,\n            \"nombre\": \"Marketing\",\n            \"descripcion\": \"Departamento de marketing\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "200 page & limit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/departamentos?page=1&limit=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"departamentos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-rwsx3+JlcliZKrDxiW+HzWnk6t0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Jan 2024 20:34:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Desarrollo\",\n            \"descripcion\": \"Departamento de desarrollo\"\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"Recursos Humanos\",\n            \"descripcion\": \"Departamento de recursos humanos\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400 query errs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/departamentos?page=1k&limit=unk&sort=id&search=",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"departamentos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1k"
+										},
+										{
+											"key": "limit",
+											"value": "unk"
+										},
+										{
+											"key": "sort",
+											"value": "id"
+										},
+										{
+											"key": "search",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-iW33WsFtEsQR6r65lrfcEehH7+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Jan 2024 20:38:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"page debe ser un número entero mayor a 0, limit debe ser un número entero mayor a 0, sort debe ser nombre o descripcion, search no debe estar vacío\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener departamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/departamentos/1"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/departamentos/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-HRSP0854BFohaRQkB+0dLGSQKeI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:55:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"nombre\": \"TI\",\n        \"descripcion\": \"Tecnologías de Información\"\n    }\n}"
+						},
+						{
+							"name": "404 ID invalid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/departamentos/1k"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-mLNVeTBwUXVHo7f/pomLMBefpOU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Jan 2024 21:19:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento debe ser un número entero mayor a 0\"\n}"
+						},
+						{
+							"name": "404 No dpto.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/departamentos/1"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RLd7u52cFfHqedApLzSTMwaLMV4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 16:06:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/departamentos/1/empleados"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/departamentos/1/empleados"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "345"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"159-zfv+eU0uhvDBsiZBA3kPR9jo1oY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 18:52:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"Juan\",\n            \"apellidoPaterno\": \"Perez\",\n            \"apellidoMaterno\": \"Gomez\",\n            \"fechaNacimiento\": \"1990-01-01T00:00:00.000Z\",\n            \"direccion\": \"Calle 1\",\n            \"telefono\": \"1234567890\"\n        },\n        {\n            \"id\": 3,\n            \"nombre\": \"Rosario\",\n            \"apellidoPaterno\": \"Santillan\",\n            \"apellidoMaterno\": \"Perez\",\n            \"fechaNacimiento\": \"2000-05-01T00:00:00.000Z\",\n            \"direccion\": \"Calle 2\",\n            \"telefono\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "404 No dpto.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/departamentos/1/empleados"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RLd7u52cFfHqedApLzSTMwaLMV4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:05:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Crear Dpto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Logística\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/departamentos"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"Logística\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/departamentos"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"68-Hi+EdJQnrnCGE6dDcTxPxSAftzg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:52:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Departamento creado correctamente\",\n    \"data\": {\n        \"id\": 4,\n        \"nombre\": \"Logística\",\n        \"descripcion\": null\n    }\n}"
+						},
+						{
+							"name": "400 Sin nombre",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/departamentos"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-szlryWZyV06XD+cH8nuynorcvUs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:49:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Nombre es requerido\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Modificar Dpto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Transporte\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/departamentos/3"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nombre\": \"Transporte\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/departamentos/3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-Zmh1fRaZ9ddHT8LDPu2uS8toZzM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:50:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Departamento modificado correctamente\",\n    \"data\": {\n        \"id\": 3,\n        \"nombre\": \"Transporte\",\n        \"descripcion\": \"Gestión de transporte\"\n    }\n}"
+						},
+						{
+							"name": "400 Sin nombre",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/departamentos/1"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-szlryWZyV06XD+cH8nuynorcvUs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:50:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Nombre es requerido\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar Dpto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/departamentos/2"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}/departamentos/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-nqKLocdjVpa69pPZzMiQvGcU4v4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:52:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Departamento eliminado correctamente\"\n}"
+						},
+						{
+							"name": "404 No dpto.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}/departamentos/21"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RLd7u52cFfHqedApLzSTMwaLMV4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jan 2024 17:34:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Departamento no encontrado\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "{{token}}"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"premideness@gmail.com\",\n  \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/login"
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"premideness@gmail.com\",\n  \"password\": \"qwerty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-oiM+hgcWZ8mXK7UIo+JW6aRKn1I\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Jan 2024 15:16:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"usuario\": {\n        \"id\": 4,\n        \"email\": \"premideness@gmail.com\",\n        \"name\": \"Jhordy\"\n    }\n}"
+				},
+				{
+					"name": "400 Empty body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/login"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-/nt1DVhQ1FyGnQEssB1AyJe1jKY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jan 2024 22:48:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Email es requerido, Password es requerido\"\n}"
+				},
+				{
+					"name": "400 Password not match",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"premideness@gmail.com\",\n  \"password\": \"qwertys\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/login"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-v4AVSVn9W31oob3tsldsvD6LBB8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Jan 2024 15:17:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Contraseña incorrecta\"\n}"
+				},
+				{
+					"name": "404 Not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"premideness@gmail.com\",\n  \"password\": \"qwertys\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/login"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-Ra4zKKAm/pHSYpcwYos40Np/FWo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jan 2024 22:48:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Usuario no encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Jhordy\",\n  \"email\": \"premideness@gmail.com\",\n  \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/register"
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Jhordy\",\n  \"email\": \"premideness@gmail.com\",\n  \"password\": \"qwerty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/register"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-0dA3OAM4bTafixkUP9XSFi7thio\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Jan 2024 15:16:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"usuario\": {\n        \"id\": 4,\n        \"name\": \"Jhordy\",\n        \"email\": \"premideness@gmail.com\"\n    }\n}"
+				},
+				{
+					"name": "400 Empty body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/register"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-wty4rywmlc5KIpwDtL6vaGOwAvc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jan 2024 22:47:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Email es requerido, Password es requerido, Nombre es requerido\"\n}"
+				}
+			]
+		}
+	]
+}
