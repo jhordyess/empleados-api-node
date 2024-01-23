@@ -1,6 +1,8 @@
 {
   "name": "empleados-api",
-  "image": "jhordyess/node:18",
+  "dockerComposeFile": "./docker-compose.dev.yml",
+  "service": "backend",
+  "shutdownAction": "none",
   "customizations": {
     "vscode": {
       "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "Prisma.prisma"],
@@ -9,5 +11,6 @@
       }
     }
   },
-  "postCreateCommand": "sudo npm i npm -g && npm i && npm run db:build"
+  "postCreateCommand": "sudo npm i npm -g && npm i && npm run db:build",
+  "workspaceFolder": "/app"
 }

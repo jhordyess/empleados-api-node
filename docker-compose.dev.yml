@@ -1,0 +1,39 @@
+# name: empleados-api-dev
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: empleados-api_sqlserver
+    restart: always
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA="Y"
+      - SA_PASSWORD=$DB_PASSWORD
+    networks:
+      - localnet
+
+  dbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: empleados-api_dbeaver
+    restart: always
+    ports:
+      - 8080:8978
+    networks:
+      - localnet
+
+  backend:
+    image: jhordyess/node:18
+    depends_on:
+      - sqlserver
+    container_name: empleados-api_backend
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    networks:
+      - localnet
+
+networks:
+  localnet:
+    driver: bridge
