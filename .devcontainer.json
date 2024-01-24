@@ -11,6 +11,6 @@
       }
     }
   },
-  "postCreateCommand": "sudo npm i npm -g && npm i && npm run db:build",
+  "postCreateCommand": "sudo npm i npm -g && yarn && yarn build && yarn db:build",
   "workspaceFolder": "/app"
 }

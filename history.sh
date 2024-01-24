@@ -1,18 +1,21 @@
 #? Command history
 
-npm init -y && npm pkg delete scripts.test
+yarn init -y && npm pkg delete scripts.test
 
-npm i express && npm pkg set scripts.start="node src/index.js" && npm pkg set scripts.dev="node --watch src/index.js"
-npm i bcrypt cors dotenv morgan express-validator jsonwebtoken
+yarn add express && npm pkg set scripts.start="node dist/index.cjs" && npm pkg set scripts.dev="webpack --mode development --watch" && npm pkg set scripts.build="webpack --mode production"
+yarn add bcrypt cors morgan express-validator jsonwebtoken swagger-ui-express
+yarn add -D typescript ts-loader @types/node @types/express @types/bcrypt @types/cors @types/morgan @types/jsonwebtoken @types/swagger-ui-express
+yarn add -D webpack webpack-cli webpack-node-externals nodemon-webpack-plugin dotenv-webpack
 
-npm i -D prettier && touch .prettierrc.json && npm pkg set scripts.format="prettier --write ."
-npm i -D eslint && npm pkg set scripts.lint="eslint . --ext .js" && npx eslint --init
+yarn add -D prettier && touch .prettierrc.json && npm pkg set scripts.format="prettier --write ."
+yarn add -D eslint && npm pkg set scripts.lint="eslint . --ext .ts" && yarn eslint --init
 
-npm i -D prisma && npx prisma init && npm pkg set scripts.build:db="prisma migrate dev"
-npm pkg set prisma.seed="node prisma/seed.js"
-touch prisma/seed.js
-
-npm i swagger-ui-express
+yarn add -D prisma && yarn prisma init && npm pkg set scripts.build:db="prisma migrate dev"
+# An error was given when using ts-node, will fail with ERR_MODULE_NOT_FOUND
+# Review https://github.com/TypeStrong/ts-node/issues/1997
+# One solution is compiling ts to js and then run the seed
+npm pkg set prisma.seed="node dist/seed.cjs"
+touch prisma/seed.ts
 
 mkdir -p \
   src/controllers \
@@ -23,30 +26,30 @@ mkdir -p \
   src/v1/routes/empleado \
   src/v1/routes/usuario
 
-touch src/index.js
+touch src/index.ts
 # Creating controllers
 touch \
-  src/controllers/empleadoController.js \
-  src/controllers/departamentoController.js \
-  src/controllers/usuarioController.js
+  src/controllers/empleadoController.ts \
+  src/controllers/departamentoController.ts \
+  src/controllers/usuarioController.ts
 # Creating services
 touch \
-  src/services/empleadoService.js \
-  src/services/departamentoService.js \
-  src/services/usuarioService.js
+  src/services/empleadoService.ts \
+  src/services/departamentoService.ts \
+  src/services/usuarioService.ts
 # Creating v1 routes
 touch \
-  src/v1/routes/empleado/router.js \
-  src/v1/routes/departamento/router.js \
-  src/v1/routes/usuario/router.js
+  src/v1/routes/empleado/router.ts \
+  src/v1/routes/departamento/router.ts \
+  src/v1/routes/usuario/router.ts
 # Creating v1 routes validations
 touch \
-  src/v1/routes/empleado/validations.js \
-  src/v1/routes/departamento/validations.js \
-  src/v1/routes/usuario/validations.js
+  src/v1/routes/empleado/validations.ts \
+  src/v1/routes/departamento/validations.ts \
+  src/v1/routes/usuario/validations.ts
 # Creating middlewares
 touch \
-  src/middlewares/requestValidator.js \
-  src/middlewares/auth.js \
-  src/middlewares/swagger.js \
-  src/middlewares/index.js
+  src/middlewares/requestValidator.ts \
+  src/middlewares/auth.ts \
+  src/middlewares/swagger.ts \
+  src/middlewares/index.ts
