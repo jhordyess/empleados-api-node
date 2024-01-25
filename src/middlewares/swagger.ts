@@ -1,16 +1,17 @@
 import type { RequestHandler } from 'express'
 import swaggerUi from 'swagger-ui-express'
-import path from 'path'
-import fs from 'fs'
+import { resolve } from 'node:path'
+import { readFileSync } from 'node:fs'
 
 const getFile: () => object = () => {
   try {
-    const openApiFilePath: string = path.resolve('docs', 'openapi.json')
-    const openApiFileContent: string = fs.readFileSync(openApiFilePath, 'utf8')
+    const openApiFilePath: string = resolve('docs', 'openapi.json')
+    const openApiFileContent: string = readFileSync(openApiFilePath, { encoding: 'utf8' })
     const openApiJSON = JSON.parse(openApiFileContent)
     openApiJSON.servers = [{ url: 'http://localhost:3000/api/v1', description: 'Local server' }]
     return openApiJSON
   } catch (error) {
+    console.log('error', error)
     return {}
   }
 }
