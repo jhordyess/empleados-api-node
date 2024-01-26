@@ -12,6 +12,7 @@ services:
     networks:
       - localnet
 
+  ## Optional
   # dbeaver:
   #   image: dbeaver/cloudbeaver:latest
   #   container_name: empleados-api_dbeaver
