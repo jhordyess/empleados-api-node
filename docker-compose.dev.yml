@@ -12,14 +12,14 @@ services:
     networks:
       - localnet
 
-  dbeaver:
-    image: dbeaver/cloudbeaver:latest
-    container_name: empleados-api_dbeaver
-    restart: always
-    ports:
-      - 8080:8978
-    networks:
-      - localnet
+  # dbeaver:
+  #   image: dbeaver/cloudbeaver:latest
+  #   container_name: empleados-api_dbeaver
+  #   restart: always
+  #   ports:
+  #     - 8080:8978
+  #   networks:
+  #     - localnet
 
   backend:
     image: jhordyess/node:18
