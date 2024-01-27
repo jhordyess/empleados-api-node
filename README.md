@@ -34,7 +34,7 @@ cd empleados-api-node
 
 3. Create a `.env` file in the root folder by copying the example from the `.env.example` file. And replace the values with your own.
 
-4. Configure SQL Server if needed.
+4. Configure SQL Server if needed. You can following the [SQLServerConfig.md](./docs/SQLServerConfig.md) guide.
 
 5. Install the dependencies:
 
@@ -87,6 +87,10 @@ yarn dev
 ```
 
 7. Now your can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
+
+## To-Do
+
+- [] Fully translate the API responses to English
 
 ## Contribution
 
