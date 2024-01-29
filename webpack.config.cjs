@@ -7,7 +7,7 @@ const Dotenv = require('dotenv-webpack')
 const NODE_ENV = process.env.NODE_ENV
 
 module.exports = {
-  name: 'empleados-api',
+  name: 'employees-api',
   entry: {
     index: path.resolve('src', 'index.ts'),
     seed: path.resolve('prisma', 'seed.ts')

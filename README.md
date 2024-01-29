@@ -16,20 +16,20 @@ REST API allows you to manage employees and departments in a company. You can us
 
 ### Screenshot
 
-![Swagger UI](https://res.cloudinary.com/jhordyess/image/upload/v1706310640/empleados-api-node/swagger.png)
+![Swagger UI](https://res.cloudinary.com/jhordyess/image/upload/v1706310640/employees-api-node/swagger.png)
 
 ## How to use
 
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:jhordyess/empleados-api-node.git
+git clone git@github.com:jhordyess/employees-api-node.git
 ```
 
 2. Open the project folder:
 
 ```bash
-cd empleados-api-node
+cd employees-api-node
 ```
 
 3. Create a `.env` file in the root folder by copying the example from the `.env.example` file. And replace the values with your own.
@@ -59,13 +59,13 @@ You need to have installed [Docker](https://www.docker.com/) and [VSCode](https:
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:jhordyess/empleados-api-node.git
+git clone git@github.com:jhordyess/employees-api-node.git
 ```
 
 2. Open the project with VSCode:
 
 ```bash
-code empleados-api-node
+code employees-api-node
 ```
 
 3. Create a `.env` file in the root folder by copying the example from the `.env.example` file. And replace the values with your own.
@@ -90,8 +90,8 @@ yarn dev
 
 ## To-Do
 
-- [] Fully translate the API responses to English
-- [] Elaborate the Entity-Relationship Diagram
+- [ ] Fully translate the API responses to English
+- [ ] Elaborate the Entity-Relationship Diagram
 
 ## Contribution
 

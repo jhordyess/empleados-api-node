@@ -1,5 +1,5 @@
 {
-  "name": "empleados-api",
+  "name": "employee-api",
   "dockerComposeFile": "./docker-compose.dev.yml",
   "service": "backend",
   "shutdownAction": "none",
