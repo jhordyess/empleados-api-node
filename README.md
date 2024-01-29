@@ -1,4 +1,4 @@
-# Empleados API in Node
+# Employees API in Node
 
 REST API that allows you to manage employees and departments in a company.
 
