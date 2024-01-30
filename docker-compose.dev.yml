@@ -2,7 +2,7 @@
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: employees-api_sqlserver
+    container_name: employees-api-dev_sqlserver
     restart: always
     ports:
       - "1433:1433"
@@ -15,7 +15,7 @@ services:
   ## Optional
   # dbeaver:
   #   image: dbeaver/cloudbeaver:latest
-  #   container_name: employees-api_dbeaver
+  #   container_name: employees-api-dev_dbeaver
   #   restart: always
   #   ports:
   #     - 8080:8978
@@ -26,7 +26,7 @@ services:
     image: jhordyess/node:18
     depends_on:
       - sqlserver
-    container_name: employees-api_backend
+    container_name: employees-api-dev_backend
     command: /bin/sh -c "while sleep 1000; do :; done"
     volumes:
       - type: bind
