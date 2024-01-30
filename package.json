@@ -1,7 +1,7 @@
 {
   "name": "employees-api",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Jhordy Gavinchu <dev@jhordyess.com>",
   "license": "MIT",
   "private": true,
