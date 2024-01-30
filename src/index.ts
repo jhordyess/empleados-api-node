@@ -1,9 +1,9 @@
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import departamentoRouter from '@/v1/routes/departamento/router'
-import empleadoRouter from '@/v1/routes/empleado/router'
-import usuarioRouter from '@/v1/routes/usuario/router'
+import departmentRouter from '@/v1/routes/department/router'
+import employeeRouter from '@/v1/routes/employee/router'
+import userRouter from '@/v1/routes/user/router'
 import { healthCheckHandler, errorHandler, notFoundHandler } from '@/middlewares/handlers'
 import { swaggerFile, withSwagger } from '@/middlewares/swagger'
 
@@ -23,9 +23,9 @@ app.use('/api/v1/docs', ...withSwagger)
 app.get('/api/v1/docs.json', swaggerFile)
 
 // Routes
-app.use('/api/v1/departamentos', departamentoRouter)
-app.use('/api/v1/empleados', empleadoRouter)
-app.use('/api/v1', usuarioRouter)
+app.use('/api/v1/departments', departmentRouter)
+app.use('/api/v1/employees', employeeRouter)
+app.use('/api/v1', userRouter)
 
 // Error handler
 app.use(errorHandler)

@@ -22,31 +22,31 @@ mkdir -p \
   src/middlewares \
   src/services \
   src/utils \
-  src/v1/routes/departamento \
-  src/v1/routes/empleado \
-  src/v1/routes/usuario
+  src/v1/routes/department \
+  src/v1/routes/employee \
+  src/v1/routes/user
 
 touch src/index.ts
 # Creating controllers
 touch \
-  src/controllers/empleadoController.ts \
-  src/controllers/departamentoController.ts \
-  src/controllers/usuarioController.ts
+  src/controllers/employeeController.ts \
+  src/controllers/departmentController.ts \
+  src/controllers/userController.ts
 # Creating services
 touch \
-  src/services/empleadoService.ts \
-  src/services/departamentoService.ts \
-  src/services/usuarioService.ts
+  src/services/employeeService.ts \
+  src/services/departmentService.ts \
+  src/services/userService.ts
 # Creating v1 routes
 touch \
-  src/v1/routes/empleado/router.ts \
-  src/v1/routes/departamento/router.ts \
-  src/v1/routes/usuario/router.ts
+  src/v1/routes/employee/router.ts \
+  src/v1/routes/department/router.ts \
+  src/v1/routes/user/router.ts
 # Creating v1 routes validations
 touch \
-  src/v1/routes/empleado/validations.ts \
-  src/v1/routes/departamento/validations.ts \
-  src/v1/routes/usuario/validations.ts
+  src/v1/routes/employee/validations.ts \
+  src/v1/routes/department/validations.ts \
+  src/v1/routes/user/validations.ts
 # Creating middlewares
 touch \
   src/middlewares/requestValidator.ts \

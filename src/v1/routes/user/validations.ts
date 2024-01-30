@@ -10,18 +10,18 @@ export type loginReq = {
 export const loginCheck = [
   body('email')
     .notEmpty()
-    .withMessage('Email es requerido')
+    .withMessage('Email is required')
     .bail()
     .isEmail()
-    .withMessage('Email debe ser válido')
+    .withMessage('Email must be a valid email')
     .normalizeEmail()
     .escape(),
   body('password')
     .notEmpty()
-    .withMessage('Password es requerido')
+    .withMessage('Password is required')
     .bail()
     .isString()
-    .withMessage('Password debe ser una cadena')
+    .withMessage('Password must be a valid string')
     .escape()
 ]
 
@@ -36,24 +36,24 @@ export type registerReq = {
 export const registerCheck = [
   body('email')
     .notEmpty()
-    .withMessage('Email es requerido')
+    .withMessage('Email is required')
     .bail()
     .isEmail()
-    .withMessage('Email debe ser válido')
+    .withMessage('Email must be a valid email')
     .normalizeEmail()
     .escape(),
   body('password')
     .notEmpty()
-    .withMessage('Password es requerido')
+    .withMessage('Password is required')
     .bail()
     .isString()
-    .withMessage('Password debe ser una cadena')
+    .withMessage('Password must be a valid string')
     .escape(),
   body('name')
     .notEmpty()
-    .withMessage('Nombre es requerido')
+    .withMessage('Name is required')
     .bail()
     .isString()
-    .withMessage('Nombre debe ser una cadena')
+    .withMessage('Name must be a valid string')
     .escape()
 ]

@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken'
 import type { Request, Response, NextFunction } from 'express'
 import { HttpError } from '@/utils/classes'
-import { createUser, findUser } from '@/services/usuarioService'
-import type { loginReq, registerReq } from '@/v1/routes/usuario/validations'
+import { createUser, findUser } from '@/services/userService'
+import type { loginReq, registerReq } from '@/v1/routes/user/validations'
 
 const SECRET = process.env.JWT_SECRET
 
@@ -16,7 +16,7 @@ export const login = async (req: Request & loginReq, res: Response, next: NextFu
     await findUser(email, password, (err, data) => {
       if (err) return next(err)
 
-      if (!data) throw new HttpError('Usuario no encontrado', 500, false)
+      if (!data) throw new HttpError('User not found', 500, false)
 
       const token = jwt.sign(String(data.id), SECRET)
 
@@ -41,7 +41,7 @@ export const register = async (req: Request & registerReq, res: Response, next: 
     await createUser(name, email, password, (err, data) => {
       if (err) return next(err)
 
-      if (!data) throw new HttpError('Usuario no encontrado', 500, false)
+      if (!data) throw new HttpError('User not created', 500, false)
 
       const token = jwt.sign(String(data.id), SECRET)
 

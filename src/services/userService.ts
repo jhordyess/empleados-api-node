@@ -21,11 +21,11 @@ export const findUser: TFindUser = async (email, password, callback) => {
       }
     })
 
-    if (!user) throw new HttpError('Usuario no encontrado', 404)
+    if (!user) throw new HttpError('User not found', 404)
 
     const isMatch = await bcrypt.compare(password, user.password)
 
-    if (!isMatch) throw new HttpError('Contraseña incorrecta', 400)
+    if (!isMatch) throw new HttpError('Password incorrect', 400)
 
     callback(null, { ...user, password: undefined })
   } catch (error) {
@@ -50,7 +50,7 @@ export const createUser: TCreateUser = async (name, email, password, callback) =
       }
     })
 
-    if (userExists) throw new HttpError('Email ya registrado', 400)
+    if (userExists) throw new HttpError('Email already exists', 400)
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
@@ -67,7 +67,7 @@ export const createUser: TCreateUser = async (name, email, password, callback) =
       }
     })
 
-    if (!user) throw new HttpError('Error al crear usuario', 500)
+    if (!user) throw new HttpError('Error while creating user', 500)
 
     callback(null, user)
   } catch (error) {

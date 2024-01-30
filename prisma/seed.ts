@@ -1,6 +1,6 @@
-import { crearDepartamento } from '@/services/departamentoService'
-import { createUser } from '@/services/usuarioService'
-import { crearEmpleado } from '@/services/empleadoService'
+import { createDepartment } from '@/services/departmentService'
+import { createUser } from '@/services/userService'
+import { createEmployee } from '@/services/employeeService'
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
@@ -8,11 +8,11 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
 const addAdmin = async () => {
   try {
     if (!ADMIN_EMAIL || !ADMIN_PASSWORD)
-      throw new Error('No se encontraron las variables de entorno ADMIN_EMAIL y ADMIN_PASSWORD')
+      throw new Error('There is no ADMIN_EMAIL or ADMIN_PASSWORD defined')
 
     await createUser('Admin', ADMIN_EMAIL, ADMIN_PASSWORD, err => {
       if (err) throw err
-      console.info('Usuario administrador creado exitosamente')
+      console.info('Admin user created successfully')
     })
   } catch (error) {
     console.error(error)
@@ -20,31 +20,31 @@ const addAdmin = async () => {
   }
 }
 
-const addDepartamentos = async () => {
+const addDepartments = async () => {
   try {
-    const departamentos = [
+    const departments = [
       {
-        nombre: 'Desarrollo',
-        descripcion: 'Departamento de desarrollo'
+        name: 'Development',
+        description: 'Department of Development'
       },
       {
-        nombre: 'Recursos Humanos',
-        descripcion: 'Departamento de recursos humanos'
+        name: 'Human Resources',
+        description: 'Department of Human Resources'
       },
       {
-        nombre: 'Ventas',
-        descripcion: 'Departamento de ventas'
+        name: 'Sales',
+        description: 'Department of Sales'
       },
       {
-        nombre: 'Marketing',
-        descripcion: 'Departamento de marketing'
+        name: 'Marketing',
+        description: 'Department of Marketing'
       }
     ]
 
-    for (const dpto of departamentos) {
-      await crearDepartamento(dpto.nombre, dpto.descripcion, err => {
+    for (const dept of departments) {
+      await createDepartment(dept.name, dept.description, err => {
         if (err) throw err
-        console.info(`Departamento ${dpto.nombre} creado exitosamente`)
+        console.info(`Department ${dept.name} created successfully`)
       })
     }
   } catch (error) {
@@ -53,59 +53,54 @@ const addDepartamentos = async () => {
   }
 }
 
-const addEmpleados = async () => {
+const addEmployees = async () => {
   try {
-    const empleados = [
+    const employees = [
       {
-        nombre: 'Juan',
-        apellidoPaterno: 'Perez',
-        apellidoMaterno: 'Lopez',
-        fechaNacimiento: new Date('1990-01-01'),
-        direccion: 'Calle 1 #123',
-        telefono: '1234567890',
-        dptoId: 1
+        name: 'Jhon',
+        lastName: 'Doe',
+        birthDate: new Date('1990-01-01'),
+        address: 'Nulla Street, 123',
+        phone: '1234567890',
+        deptId: 1
       },
       {
-        nombre: 'Maria',
-        apellidoPaterno: 'Gonzalez',
-        apellidoMaterno: 'Gomez',
-        fechaNacimiento: new Date('1990-01-01'),
-        direccion: 'Calle 2 #123',
-        telefono: '1234567890',
-        dptoId: 2
+        name: 'Mary',
+        lastName: 'Smith',
+        birthDate: new Date('1990-01-01'),
+        address: 'Martin Street, 123',
+        phone: '1234567890',
+        deptId: 2
       },
       {
-        nombre: 'Pedro',
-        apellidoPaterno: 'Rodriguez',
-        apellidoMaterno: 'Hernandez',
-        fechaNacimiento: new Date('1990-01-01'),
-        direccion: 'Calle 3 #123',
-        telefono: '1234567890',
-        dptoId: 3
+        name: 'George',
+        lastName: 'Hernandez',
+        birthDate: new Date('1990-01-01'),
+        address: 'Patterson Street, 456',
+        phone: '1234567890',
+        deptId: 3
       },
       {
-        nombre: 'Ana',
-        apellidoPaterno: 'Martinez',
-        apellidoMaterno: 'Perez',
-        fechaNacimiento: new Date('1990-01-01'),
-        direccion: 'Calle 4 #123',
-        telefono: '1234567890',
-        dptoId: 4
+        name: 'Peter',
+        lastName: 'Parker',
+        birthDate: new Date('1990-01-01'),
+        address: 'Parker Street, 789',
+        phone: '1234567890',
+        deptId: 4
       }
     ]
 
-    for (const empleado of empleados) {
-      await crearEmpleado(
-        empleado.nombre,
-        empleado.apellidoPaterno,
-        empleado.apellidoMaterno,
-        empleado.fechaNacimiento,
-        empleado.direccion,
-        empleado.telefono,
-        empleado.dptoId,
+    for (const employee of employees) {
+      await createEmployee(
+        employee.name,
+        employee.lastName,
+        employee.birthDate,
+        employee.address,
+        employee.phone,
+        employee.deptId,
         err => {
           if (err) throw err
-          console.info(`Empleado ${empleado.nombre} creado exitosamente`)
+          console.info(`Employee ${employee.name} created successfully`)
         }
       )
     }
@@ -116,5 +111,5 @@ const addEmpleados = async () => {
 }
 
 addAdmin()
-addDepartamentos()
-addEmpleados()
+addDepartments()
+addEmployees()

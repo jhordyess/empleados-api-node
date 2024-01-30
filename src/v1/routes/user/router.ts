@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { withValidation } from '@/middlewares'
 import { loginCheck, registerCheck } from './validations'
-import { login, register } from '@/controllers/usuarioController'
+import { login, register } from '@/controllers/userController'
 
 const router = Router()
 

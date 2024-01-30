@@ -17,41 +17,41 @@ model User {
   password String
 }
 
-model Persona {
-  id              Int       @id @default(autoincrement())
-  nombre          String
-  apellidoPaterno String
-  apellidoMaterno String
-  fechaNacimiento DateTime  @db.Date
-  direccion       String?
-  telefono        String?
-  empleado        Empleado?
-  // manager         Manager?
+model Person {
+  id        Int       @id @default(autoincrement())
+  name      String
+  lastName  String
+  birthDate DateTime  @db.Date
+  address   String?
+  phone     String?
+  employee  Employee?
+  // manager  Manager?
 }
 
-model Empleado {
-  id             Int          @id @default(autoincrement())
-  personaId      Int          @unique
-  persona        Persona      @relation(fields: [personaId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  activo         Boolean      @default(true)
-  departamentoId Int
-  departamento   Departamento @relation(fields: [departamentoId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+model Employee {
+  id           Int        @id @default(autoincrement())
+  personId     Int        @unique
+  person       Person     @relation(fields: [personId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  active       Boolean    @default(true)
+  departmentId Int
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
-model Departamento {
+model Department {
   id          Int        @id @default(autoincrement())
-  nombre      String
-  descripcion String?
-  activo      Boolean    @default(true)
-  empleados   Empleado[]
+  name        String
+  description String?
+  active      Boolean    @default(true)
+  employees   Employee[]
   // managerId   Int        @unique
   // manager     Manager    @relation(fields: [managerId], references: [id])
 }
 
 // model Manager {
-//   id           Int           @id @default(autoincrement())
-//   personaId    Int           @unique
-//   persona      Persona       @relation(fields: [personaId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-//   activo       Boolean       @default(true)
-//   departamento Departamento?
+//   id           Int         @id @default(autoincrement())
+//   personId     Int         @unique
+//   person       Person      @relation(fields: [personId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+//   active       Boolean     @default(true)
+//   department   Department? @relation(fields: [departmentId], references: [id])
+//   departmentId Int?
 // }
