@@ -90,7 +90,7 @@ yarn dev
 
 ## To-Do
 
-- [ ] Fully translate the API responses to English
+- [ ] Fully translate the API documentation to English
 - [ ] Elaborate the Entity-Relationship Diagram
 
 ## Contribution
