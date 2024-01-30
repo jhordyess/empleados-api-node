@@ -18,7 +18,7 @@ REST API allows you to manage employees and departments in a company. You can us
 
 ![Swagger UI](https://res.cloudinary.com/jhordyess/image/upload/v1706310640/employees-api-node/swagger.png)
 
-## How to use
+## How to use for development
 
 1. Clone the repository:
 
@@ -50,7 +50,7 @@ yarn dev
 
 7. Now your can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
 
-## How to use with VSCode dev containers
+## How to use for development with Docker
 
 You can use the VSCode dev containers to run the project in a containerized environment.
 
@@ -87,6 +87,24 @@ yarn dev
 ```
 
 7. Now your can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
+
+## How to use for production with Docker
+
+To run the project in production with Docker, remember to create the `.env` file and replace the values with your own.
+
+Then, run the following command in the terminal:
+
+```bash
+docker compose -f docker-compose.prod.yml up -d
+```
+
+To stop or remove, run:
+
+```bash
+docker compose -f docker-compose.prod.yml down
+```
+
+Take note that this production configuration is just for testing purposes, and may not be suitable for a real production environment.
 
 ## To-Do
 
