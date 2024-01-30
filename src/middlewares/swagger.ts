@@ -3,12 +3,14 @@ import swaggerUi from 'swagger-ui-express'
 import { resolve } from 'node:path'
 import { readFileSync } from 'node:fs'
 
+const PORT = process.env.BACKEND_PORT || 3000
+
 const getFile: () => object = () => {
   try {
     const openApiFilePath: string = resolve('docs', 'openapi.json')
     const openApiFileContent: string = readFileSync(openApiFilePath, { encoding: 'utf8' })
     const openApiJSON = JSON.parse(openApiFileContent)
-    openApiJSON.servers = [{ url: 'http://localhost:3000/api/v1', description: 'Local server' }]
+    openApiJSON.servers = [{ url: `http://localhost:${PORT}/api/v1`, description: 'Local server' }]
     return openApiJSON
   } catch (error) {
     console.log('error', error)

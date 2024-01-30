@@ -111,5 +111,4 @@ const addEmployees = async () => {
 }
 
 addAdmin()
-addDepartments()
-addEmployees()
+addDepartments().then(() => addEmployees())
