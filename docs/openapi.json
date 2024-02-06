@@ -1,16 +1,16 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "employees-api-node",
+    "title": "empleados-api-node",
     "description": "",
     "version": "1.0.0"
   },
   "tags": [
     {
-      "name": "Empleado"
+      "name": "Employee"
     },
     {
-      "name": "Departamento"
+      "name": "Department"
     }
   ],
   "paths": {
@@ -115,13 +115,13 @@
                   "1": {
                     "summary": "Exception: Empty Body",
                     "value": {
-                      "error": "Email es requerido, Password es requerido"
+                      "error": "Email is required, Password is required"
                     }
                   },
                   "2": {
                     "summary": "Exception: Password Mismatch",
                     "value": {
-                      "error": "Contraseña incorrecta"
+                      "error": "Incorrect password"
                     }
                   }
                 }
@@ -147,7 +147,7 @@
                   "1": {
                     "summary": "Exception",
                     "value": {
-                      "error": "Usuario no encontrado"
+                      "error": "User not found"
                     }
                   }
                 }
@@ -164,7 +164,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -283,13 +283,13 @@
                   "1": {
                     "summary": "Exception: Empty Body",
                     "value": {
-                      "error": "Email es requerido, Password es requerido, Nombre es requerido"
+                      "error": "Email is required, Password is required, Name is required"
                     }
                   },
                   "2": {
                     "summary": "Exception: Double Email",
                     "value": {
-                      "error": "Email ya registrado"
+                      "error": "Email already exists"
                     }
                   }
                 }
@@ -306,7 +306,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -320,14 +320,14 @@
         "security": []
       }
     },
-    "/empleados": {
+    "/employees": {
       "get": {
         "summary": "Listar empleados",
-        "x-apidog-folder": "Empleado",
+        "x-apidog-folder": "Employee",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Empleado"],
+        "tags": ["Employee"],
         "parameters": [
           {
             "name": "page",
@@ -394,7 +394,7 @@
                         "type": "object",
                         "x-apidog-refs": {
                           "01HMW0Z6ME6S765CMKSF07ZAKC": {
-                            "$ref": "#/components/schemas/Empleado",
+                            "$ref": "#/components/schemas/Employee",
                             "x-apidog-overrides": {}
                           }
                         },
@@ -402,47 +402,42 @@
                           "id": {
                             "type": "integer"
                           },
-                          "nombre": {
+                          "name": {
                             "type": "string"
                           },
-                          "apellidoPaterno": {
+                          "lastName": {
                             "type": "string"
                           },
-                          "apellidoMaterno": {
+                          "birthDate": {
                             "type": "string"
                           },
-                          "fechaNacimiento": {
-                            "type": "string"
-                          },
-                          "direccion": {
+                          "address": {
                             "type": ["string", "null"]
                           },
-                          "telefono": {
+                          "phone": {
                             "type": ["string", "null"]
                           },
                           "departamento": {
-                            "$ref": "#/components/schemas/Departamento"
+                            "$ref": "#/components/schemas/Department"
                           }
                         },
                         "required": [
                           "departamento",
                           "id",
-                          "nombre",
-                          "apellidoPaterno",
-                          "apellidoMaterno",
-                          "fechaNacimiento",
-                          "direccion",
-                          "telefono"
+                          "name",
+                          "lastName",
+                          "birthDate",
+                          "address",
+                          "phone"
                         ],
                         "x-apidog-orders": ["01HMW0Z6ME6S765CMKSF07ZAKC", "departamento"],
                         "x-apidog-ignore-properties": [
                           "id",
-                          "nombre",
-                          "apellidoPaterno",
-                          "apellidoMaterno",
-                          "fechaNacimiento",
-                          "direccion",
-                          "telefono"
+                          "name",
+                          "lastName",
+                          "birthDate",
+                          "address",
+                          "phone"
                         ]
                       }
                     }
@@ -602,7 +597,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -647,7 +642,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -666,11 +661,11 @@
       },
       "post": {
         "summary": "Crear empleado",
-        "x-apidog-folder": "Empleado",
+        "x-apidog-folder": "Employee",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Empleado"],
+        "tags": ["Employee"],
         "parameters": [],
         "requestBody": {
           "content": {
@@ -744,7 +739,7 @@
                       "type": "object",
                       "x-apidog-refs": {
                         "01HMW2DZYFW31JKZNW1K7A8M01": {
-                          "$ref": "#/components/schemas/Empleado",
+                          "$ref": "#/components/schemas/Employee",
                           "x-apidog-overrides": {}
                         }
                       },
@@ -752,47 +747,42 @@
                         "id": {
                           "type": "integer"
                         },
-                        "nombre": {
+                        "name": {
                           "type": "string"
                         },
-                        "apellidoPaterno": {
+                        "lastName": {
                           "type": "string"
                         },
-                        "apellidoMaterno": {
+                        "birthDate": {
                           "type": "string"
                         },
-                        "fechaNacimiento": {
-                          "type": "string"
-                        },
-                        "direccion": {
+                        "address": {
                           "type": ["string", "null"]
                         },
-                        "telefono": {
+                        "phone": {
                           "type": ["string", "null"]
                         },
                         "departamento": {
-                          "$ref": "#/components/schemas/Departamento"
+                          "$ref": "#/components/schemas/Department"
                         }
                       },
                       "required": [
                         "departamento",
                         "id",
-                        "nombre",
-                        "apellidoPaterno",
-                        "apellidoMaterno",
-                        "fechaNacimiento",
-                        "direccion",
-                        "telefono"
+                        "name",
+                        "lastName",
+                        "birthDate",
+                        "address",
+                        "phone"
                       ],
                       "x-apidog-orders": ["01HMW2DZYFW31JKZNW1K7A8M01", "departamento"],
                       "x-apidog-ignore-properties": [
                         "id",
-                        "nombre",
-                        "apellidoPaterno",
-                        "apellidoMaterno",
-                        "fechaNacimiento",
-                        "direccion",
-                        "telefono"
+                        "name",
+                        "lastName",
+                        "birthDate",
+                        "address",
+                        "phone"
                       ]
                     }
                   },
@@ -866,7 +856,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -911,7 +901,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -929,14 +919,14 @@
         ]
       }
     },
-    "/empleados/{empleadoId}": {
+    "/employees/{empleadoId}": {
       "get": {
         "summary": "Obtener empleado",
-        "x-apidog-folder": "Empleado",
+        "x-apidog-folder": "Employee",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Empleado"],
+        "tags": ["Employee"],
         "parameters": [
           {
             "name": "empleadoId",
@@ -961,7 +951,7 @@
                       "type": "object",
                       "x-apidog-refs": {
                         "01HMW249MZBK9CA5WYWAF2YC9G": {
-                          "$ref": "#/components/schemas/Empleado",
+                          "$ref": "#/components/schemas/Employee",
                           "x-apidog-overrides": {}
                         }
                       },
@@ -969,47 +959,42 @@
                         "id": {
                           "type": "integer"
                         },
-                        "nombre": {
+                        "name": {
                           "type": "string"
                         },
-                        "apellidoPaterno": {
+                        "lastName": {
                           "type": "string"
                         },
-                        "apellidoMaterno": {
+                        "birthDate": {
                           "type": "string"
                         },
-                        "fechaNacimiento": {
-                          "type": "string"
-                        },
-                        "direccion": {
+                        "address": {
                           "type": ["string", "null"]
                         },
-                        "telefono": {
+                        "phone": {
                           "type": ["string", "null"]
                         },
                         "departamento": {
-                          "$ref": "#/components/schemas/Departamento"
+                          "$ref": "#/components/schemas/Department"
                         }
                       },
                       "required": [
                         "departamento",
                         "id",
-                        "nombre",
-                        "apellidoPaterno",
-                        "apellidoMaterno",
-                        "fechaNacimiento",
-                        "direccion",
-                        "telefono"
+                        "name",
+                        "lastName",
+                        "birthDate",
+                        "address",
+                        "phone"
                       ],
                       "x-apidog-orders": ["01HMW249MZBK9CA5WYWAF2YC9G", "departamento"],
                       "x-apidog-ignore-properties": [
                         "id",
-                        "nombre",
-                        "apellidoPaterno",
-                        "apellidoMaterno",
-                        "fechaNacimiento",
-                        "direccion",
-                        "telefono"
+                        "name",
+                        "lastName",
+                        "birthDate",
+                        "address",
+                        "phone"
                       ]
                     }
                   },
@@ -1077,7 +1062,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1122,7 +1107,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1141,11 +1126,11 @@
       },
       "put": {
         "summary": "Modificar empleado",
-        "x-apidog-folder": "Empleado",
+        "x-apidog-folder": "Employee",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Empleado"],
+        "tags": ["Employee"],
         "parameters": [
           {
             "name": "empleadoId",
@@ -1230,7 +1215,7 @@
                       "type": "object",
                       "x-apidog-refs": {
                         "01HMW2RYK94AME1JKG4DVD8N45": {
-                          "$ref": "#/components/schemas/Empleado",
+                          "$ref": "#/components/schemas/Employee",
                           "x-apidog-overrides": {}
                         }
                       },
@@ -1238,47 +1223,42 @@
                         "id": {
                           "type": "integer"
                         },
-                        "nombre": {
+                        "name": {
                           "type": "string"
                         },
-                        "apellidoPaterno": {
+                        "lastName": {
                           "type": "string"
                         },
-                        "apellidoMaterno": {
+                        "birthDate": {
                           "type": "string"
                         },
-                        "fechaNacimiento": {
-                          "type": "string"
-                        },
-                        "direccion": {
+                        "address": {
                           "type": ["string", "null"]
                         },
-                        "telefono": {
+                        "phone": {
                           "type": ["string", "null"]
                         },
                         "departamento": {
-                          "$ref": "#/components/schemas/Departamento"
+                          "$ref": "#/components/schemas/Department"
                         }
                       },
                       "required": [
                         "departamento",
                         "id",
-                        "nombre",
-                        "apellidoPaterno",
-                        "apellidoMaterno",
-                        "fechaNacimiento",
-                        "direccion",
-                        "telefono"
+                        "name",
+                        "lastName",
+                        "birthDate",
+                        "address",
+                        "phone"
                       ],
                       "x-apidog-orders": ["01HMW2RYK94AME1JKG4DVD8N45", "departamento"],
                       "x-apidog-ignore-properties": [
                         "id",
-                        "nombre",
-                        "apellidoPaterno",
-                        "apellidoMaterno",
-                        "fechaNacimiento",
-                        "direccion",
-                        "telefono"
+                        "name",
+                        "lastName",
+                        "birthDate",
+                        "address",
+                        "phone"
                       ]
                     }
                   },
@@ -1353,7 +1333,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1404,7 +1384,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1423,11 +1403,11 @@
       },
       "delete": {
         "summary": "Eliminar empleado",
-        "x-apidog-folder": "Empleado",
+        "x-apidog-folder": "Employee",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Empleado"],
+        "tags": ["Employee"],
         "parameters": [
           {
             "name": "empleadoId",
@@ -1503,7 +1483,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1548,7 +1528,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1566,19 +1546,19 @@
         ]
       }
     },
-    "/departamentos": {
+    "/departments": {
       "get": {
-        "summary": "Listar departamentos",
-        "x-apidog-folder": "Departamento",
+        "summary": "List departments",
+        "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Departamento"],
+        "tags": ["Department"],
         "parameters": [
           {
             "name": "page",
             "in": "query",
-            "description": "Número de página, default 1",
+            "description": "Page number, default 1",
             "required": false,
             "example": "1",
             "schema": {
@@ -1588,7 +1568,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Límite de página, default 10",
+            "description": "Page limit, default 10",
             "required": false,
             "example": "10",
             "schema": {
@@ -1598,9 +1578,9 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Ordenar ascendentemente por: \"nombre\", \"descripcion\"",
+            "description": "Sort ascending by: \"name\", \"description\"",
             "required": false,
-            "example": "nombre",
+            "example": "name",
             "schema": {
               "type": "string"
             }
@@ -1608,7 +1588,7 @@
           {
             "name": "search",
             "in": "query",
-            "description": "Texto a buscar",
+            "description": "Text to search",
             "required": false,
             "example": "a",
             "schema": {
@@ -1617,8 +1597,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -1627,7 +1607,7 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Departamento"
+                        "$ref": "#/components/schemas/Department"
                       }
                     }
                   },
@@ -1642,23 +1622,23 @@
                       "data": [
                         {
                           "id": 1,
-                          "nombre": "Desarrollo",
-                          "descripcion": "Departamento de desarrollo"
+                          "name": "Development",
+                          "description": "Department of Development"
                         },
                         {
                           "id": 2,
-                          "nombre": "Recursos Humanos",
-                          "descripcion": "Departamento de recursos humanos"
+                          "name": "Human Resources",
+                          "description": "Department of Human Resources"
                         },
                         {
                           "id": 3,
-                          "nombre": "Ventas",
-                          "descripcion": "Departamento de ventas"
+                          "name": "Sales",
+                          "description": "Department of Sales"
                         },
                         {
                           "id": 4,
-                          "nombre": "Marketing",
-                          "descripcion": "Departamento de marketing"
+                          "name": "Marketing",
+                          "description": "Department of Marketing"
                         }
                       ]
                     }
@@ -1675,13 +1655,13 @@
                       "data": [
                         {
                           "id": 1,
-                          "nombre": "Desarrollo",
-                          "descripcion": "Departamento de desarrollo"
+                          "name": "Development",
+                          "description": "Department of Development"
                         },
                         {
                           "id": 2,
-                          "nombre": "Recursos Humanos",
-                          "descripcion": "Departamento de recursos humanos"
+                          "name": "Human Resources",
+                          "description": "Department of Human Resources"
                         }
                       ]
                     }
@@ -1709,7 +1689,7 @@
                   "1": {
                     "summary": "Exception: Invalid queries",
                     "value": {
-                      "error": "page debe ser un número entero mayor a 0, limit debe ser un número entero mayor a 0, sort debe ser nombre o descripcion, search no debe estar vacío"
+                      "error": "page must be a number greater than 0, limit must be a number greater than 0, sort must be name or description, search must not be empty"
                     }
                   }
                 }
@@ -1726,7 +1706,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1745,7 +1725,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1764,11 +1744,11 @@
       },
       "post": {
         "summary": "Crear departamento",
-        "x-apidog-folder": "Departamento",
+        "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Departamento"],
+        "tags": ["Department"],
         "parameters": [],
         "requestBody": {
           "content": {
@@ -1805,7 +1785,7 @@
                       "type": "string"
                     },
                     "data": {
-                      "$ref": "#/components/schemas/Departamento"
+                      "$ref": "#/components/schemas/Department"
                     }
                   },
                   "required": ["message", "data"],
@@ -1864,7 +1844,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1883,7 +1863,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -1901,14 +1881,14 @@
         ]
       }
     },
-    "/departamentos/{dptoId}": {
+    "/departments/{dptoId}": {
       "get": {
         "summary": "Obtener departamento",
-        "x-apidog-folder": "Departamento",
+        "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Departamento"],
+        "tags": ["Department"],
         "parameters": [
           {
             "name": "dptoId",
@@ -1930,7 +1910,7 @@
                   "type": "object",
                   "properties": {
                     "data": {
-                      "$ref": "#/components/schemas/Departamento"
+                      "$ref": "#/components/schemas/Department"
                     }
                   },
                   "required": ["data"],
@@ -1988,7 +1968,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2033,7 +2013,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2052,11 +2032,11 @@
       },
       "put": {
         "summary": "Modificar departamento",
-        "x-apidog-folder": "Departamento",
+        "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Departamento"],
+        "tags": ["Department"],
         "parameters": [
           {
             "name": "dptoId",
@@ -2104,7 +2084,7 @@
                       "type": "string"
                     },
                     "data": {
-                      "$ref": "#/components/schemas/Departamento"
+                      "$ref": "#/components/schemas/Department"
                     }
                   },
                   "required": ["message", "data"],
@@ -2169,7 +2149,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2188,7 +2168,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2207,11 +2187,11 @@
       },
       "delete": {
         "summary": "Eliminar departamento",
-        "x-apidog-folder": "Departamento",
+        "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Departamento"],
+        "tags": ["Department"],
         "parameters": [
           {
             "name": "dptoId",
@@ -2287,7 +2267,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2332,7 +2312,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2350,14 +2330,14 @@
         ]
       }
     },
-    "/departamentos/{dptoId}/empleados": {
+    "/departments/{dptoId}/employees": {
       "get": {
         "summary": "Listar empleados por departamento",
-        "x-apidog-folder": "Departamento",
+        "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
         "description": "",
-        "tags": ["Departamento"],
+        "tags": ["Department"],
         "parameters": [
           {
             "name": "dptoId",
@@ -2381,7 +2361,7 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/Empleado",
+                        "$ref": "#/components/schemas/Employee",
                         "x-apidog-overrides": {}
                       }
                     }
@@ -2462,7 +2442,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2507,7 +2487,7 @@
                   "properties": {
                     "error": {
                       "type": "string",
-                      "description": "Mensaje de error"
+                      "description": "Error message"
                     }
                   },
                   "x-apidog-orders": ["error"],
@@ -2528,67 +2508,48 @@
   },
   "components": {
     "schemas": {
-      "Empleado": {
+      "Employee": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer"
           },
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "apellidoPaterno": {
+          "lastName": {
             "type": "string"
           },
-          "apellidoMaterno": {
+          "birthDate": {
             "type": "string"
           },
-          "fechaNacimiento": {
-            "type": "string"
-          },
-          "direccion": {
+          "address": {
             "type": ["string", "null"]
           },
-          "telefono": {
+          "phone": {
             "type": ["string", "null"]
           }
         },
-        "required": [
-          "id",
-          "nombre",
-          "apellidoPaterno",
-          "apellidoMaterno",
-          "fechaNacimiento",
-          "direccion",
-          "telefono"
-        ],
-        "x-apidog-orders": [
-          "id",
-          "nombre",
-          "apellidoPaterno",
-          "apellidoMaterno",
-          "fechaNacimiento",
-          "direccion",
-          "telefono"
-        ],
+        "required": ["id", "name", "lastName", "birthDate", "address", "phone"],
+        "x-apidog-orders": ["id", "name", "lastName", "birthDate", "address", "phone"],
         "x-apidog-ignore-properties": [],
         "x-apidog-folder": ""
       },
-      "Departamento": {
+      "Department": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer"
           },
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "descripcion": {
+          "description": {
             "type": ["string", "null"]
           }
         },
-        "x-apidog-orders": ["id", "nombre", "descripcion"],
-        "required": ["id", "nombre", "descripcion"],
+        "x-apidog-orders": ["id", "name", "description"],
+        "required": ["id", "name", "description"],
         "x-apidog-ignore-properties": [],
         "x-apidog-folder": ""
       }
