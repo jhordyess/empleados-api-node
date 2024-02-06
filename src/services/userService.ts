@@ -25,7 +25,7 @@ export const findUser: TFindUser = async (email, password, callback) => {
 
     const isMatch = await bcrypt.compare(password, user.password)
 
-    if (!isMatch) throw new HttpError('Password incorrect', 400)
+    if (!isMatch) throw new HttpError('Incorrect password', 400)
 
     callback(null, { ...user, password: undefined })
   } catch (error) {

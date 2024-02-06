@@ -4,7 +4,7 @@ export type listDeptReq = {
   query: {
     page?: number
     limit?: number
-    sort?: string
+    sort?: 'name' | 'description'
     search?: string
   }
 }
