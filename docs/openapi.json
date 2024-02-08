@@ -1743,7 +1743,7 @@
         ]
       },
       "post": {
-        "summary": "Crear departamento",
+        "summary": "Create department",
         "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
@@ -1756,19 +1756,19 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nombre": {
+                  "name": {
                     "type": "string"
                   },
-                  "descripcion": {
+                  "description": {
                     "type": "string"
                   }
                 },
-                "required": ["nombre"],
-                "x-apidog-orders": ["nombre", "descripcion"],
+                "required": ["name"],
+                "x-apidog-orders": ["name", "description"],
                 "x-apidog-ignore-properties": []
               },
               "example": {
-                "nombre": "Logística"
+                "name": "Sales"
               }
             }
           }
@@ -1796,11 +1796,11 @@
                   "1": {
                     "summary": "Success",
                     "value": {
-                      "message": "Departamento creado correctamente",
+                      "message": "Department created successfully",
                       "data": {
-                        "id": 4,
-                        "nombre": "Logística",
-                        "descripcion": null
+                        "id": 5,
+                        "name": "Sales",
+                        "description": null
                       }
                     }
                   }
@@ -1827,7 +1827,7 @@
                   "1": {
                     "summary": "Exception: Without name",
                     "value": {
-                      "error": "Nombre es requerido"
+                      "error": "Name is required"
                     }
                   }
                 }
@@ -1881,9 +1881,9 @@
         ]
       }
     },
-    "/departments/{dptoId}": {
+    "/departments/{deptId}": {
       "get": {
-        "summary": "Obtener departamento",
+        "summary": "Get Department",
         "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
@@ -1891,9 +1891,9 @@
         "tags": ["Department"],
         "parameters": [
           {
-            "name": "dptoId",
+            "name": "deptId",
             "in": "path",
-            "description": "Identificador de departamento",
+            "description": "Department identifier",
             "required": true,
             "example": "1",
             "schema": {
@@ -1923,8 +1923,8 @@
                     "value": {
                       "data": {
                         "id": 1,
-                        "nombre": "Desarrollo",
-                        "descripcion": "Departamento de desarrollo"
+                        "name": "Development",
+                        "description": "Department of Development"
                       }
                     }
                   }
@@ -1951,7 +1951,7 @@
                   "1": {
                     "summary": "Exception: Invalid path",
                     "value": {
-                      "error": "Departamento debe ser un número entero mayor a 0"
+                      "error": "Department must be a number greater than 0"
                     }
                   }
                 }
@@ -1996,7 +1996,7 @@
                   "1": {
                     "summary": "Exception",
                     "value": {
-                      "error": "Departamento no encontrado"
+                      "error": "Department not found"
                     }
                   }
                 }
@@ -2031,7 +2031,7 @@
         ]
       },
       "put": {
-        "summary": "Modificar departamento",
+        "summary": "Update department",
         "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
@@ -2039,9 +2039,9 @@
         "tags": ["Department"],
         "parameters": [
           {
-            "name": "dptoId",
+            "name": "deptId",
             "in": "path",
-            "description": "",
+            "description": "Department identifier",
             "required": true,
             "example": "1",
             "schema": {
@@ -2055,19 +2055,19 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nombre": {
+                  "name": {
                     "type": "string"
                   },
-                  "descripcion": {
+                  "description": {
                     "type": "string"
                   }
                 },
-                "required": ["nombre"],
-                "x-apidog-orders": ["nombre", "descripcion"],
+                "required": ["name"],
+                "x-apidog-orders": ["name", "description"],
                 "x-apidog-ignore-properties": []
               },
               "example": {
-                "nombre": "Transporte"
+                "name": "Finance"
               }
             }
           }
@@ -2095,11 +2095,11 @@
                   "1": {
                     "summary": "Success",
                     "value": {
-                      "message": "Departamento modificado correctamente",
+                      "message": "Department modified successfully",
                       "data": {
-                        "id": 3,
-                        "nombre": "Transporte",
-                        "descripcion": "Gestión de transporte"
+                        "id": 1,
+                        "name": "Finance",
+                        "description": "Department of Development"
                       }
                     }
                   }
@@ -2126,13 +2126,13 @@
                   "1": {
                     "summary": "Exception: Without name",
                     "value": {
-                      "error": "Nombre es requerido"
+                      "error": "Name is required"
                     }
                   },
                   "2": {
                     "summary": "Exception: Invalid path",
                     "value": {
-                      "error": "Departamento debe ser un número entero mayor a 0"
+                      "error": "Department must be a number greater than 0"
                     }
                   }
                 }
@@ -2186,7 +2186,7 @@
         ]
       },
       "delete": {
-        "summary": "Eliminar departamento",
+        "summary": "Delete department",
         "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
@@ -2194,9 +2194,9 @@
         "tags": ["Department"],
         "parameters": [
           {
-            "name": "dptoId",
+            "name": "deptId",
             "in": "path",
-            "description": "",
+            "description": "Department identifier",
             "required": true,
             "example": "1",
             "schema": {
@@ -2224,7 +2224,7 @@
                   "1": {
                     "summary": "Success",
                     "value": {
-                      "message": "Departamento eliminado correctamente"
+                      "message": "Department deleted successfully"
                     }
                   }
                 }
@@ -2250,7 +2250,7 @@
                   "1": {
                     "summary": "Exception: Invalid path",
                     "value": {
-                      "error": "Departamento debe ser un número entero mayor a 0"
+                      "error": "Department must be a number greater than 0"
                     }
                   }
                 }
@@ -2330,9 +2330,9 @@
         ]
       }
     },
-    "/departments/{dptoId}/employees": {
+    "/departments/{deptId}/employees": {
       "get": {
-        "summary": "Listar empleados por departamento",
+        "summary": "Employees by dept",
         "x-apidog-folder": "Department",
         "x-apidog-status": "released",
         "deprecated": false,
@@ -2340,9 +2340,9 @@
         "tags": ["Department"],
         "parameters": [
           {
-            "name": "dptoId",
+            "name": "deptId",
             "in": "path",
-            "description": "",
+            "description": "Department Identifier",
             "required": true,
             "example": "1",
             "schema": {
@@ -2377,21 +2377,11 @@
                       "data": [
                         {
                           "id": 1,
-                          "nombre": "Juan",
-                          "apellidoPaterno": "Perez",
-                          "apellidoMaterno": "Gomez",
-                          "fechaNacimiento": "1990-01-01T00:00:00.000Z",
-                          "direccion": "Calle 1",
-                          "telefono": "1234567890"
-                        },
-                        {
-                          "id": 3,
-                          "nombre": "Rosario",
-                          "apellidoPaterno": "Santillan",
-                          "apellidoMaterno": "Perez",
-                          "fechaNacimiento": "2000-05-01T00:00:00.000Z",
-                          "direccion": "Calle 2",
-                          "telefono": null
+                          "name": "Jhon",
+                          "lastName": "Doe",
+                          "birthDate": "1990-01-01T00:00:00.000Z",
+                          "address": "Nulla Street, 123",
+                          "phone": "1234567890"
                         }
                       ]
                     }
@@ -2425,7 +2415,7 @@
                   "1": {
                     "summary": "Exception: Invalid path",
                     "value": {
-                      "error": "Departamento debe ser un número entero mayor a 0"
+                      "error": "Department must be a number greater than 0"
                     }
                   }
                 }
@@ -2470,7 +2460,7 @@
                   "1": {
                     "summary": "Exception",
                     "value": {
-                      "error": "Departamento no encontrado"
+                      "error": "Department not found"
                     }
                   }
                 }
