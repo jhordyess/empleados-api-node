@@ -48,7 +48,7 @@ yarn
 yarn dev
 ```
 
-7. Now your can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
+7. Now you can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
 
 ## How to use for development with Docker
 
@@ -76,17 +76,17 @@ code employees-api-node
 docker compose -f docker-compose.dev.yml up -d
 ```
 
-4. Open the command palette and select the option `Dev Containers: Reopen in Container`.
+5. Open the command palette and select the option `Dev Containers: Reopen in Container`.
 
-5. Wait for the container to be built and the project to be started.
+6. Wait for the container to be built and the project to be started.
 
-6. Open the terminal in VSCode and run the project:
+7. Open the terminal in VSCode and run the project:
 
 ```bash
 yarn dev
 ```
 
-7. Now your can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
+8. Now you can test the endpoints at <http://localhost:3000/api/v1>. The API docs(Swagger UI) will be available at <http://localhost:3000/api/v1/docs>
 
 ## How to use for production with Docker
 
