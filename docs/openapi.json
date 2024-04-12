@@ -1,6 +1,6 @@
 {
   "openapi": "3.1.0",
-  "info": { "title": "empleados-api-node", "description": "", "version": "1.0.0" },
+  "info": { "title": "employees-api-node", "description": "", "version": "1.0.0" },
   "tags": [{ "name": "Employee" }, { "name": "Department" }],
   "paths": {
     "/login": {
