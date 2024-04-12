@@ -142,7 +142,9 @@ export const updateEmployeeCheck = [
   body('address').optional().isString().withMessage('Address must be a valid string').escape(),
   body('phone').optional().isString().withMessage('Phone must be a valid string').escape(),
   body('deptId')
-    .optional()
+    .notEmpty()
+    .withMessage('Department is required')
+    .bail()
     .isInt({ min: 1 })
     .withMessage('Department must be a number greater than 0')
     .toInt()
