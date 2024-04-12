@@ -2,11 +2,11 @@ FROM node:18-alpine as build
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json yarn.lock .yarnrc.yml ./
 
 RUN npm pkg delete scripts.prepare
 
-RUN yarn --frozen-lockfile
+RUN yarn install --immutable
 
 COPY tsconfig.json webpack.config.cjs .env ./
 COPY prisma ./prisma
