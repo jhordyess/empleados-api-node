@@ -15,8 +15,8 @@ REST API allows you to manage employees and departments in a company. You can us
 - Dev Environment: [VSCode](https://code.visualstudio.com/) with [dev containers](https://code.visualstudio.com/docs/devcontainers/containers) in [Zorin OS](https://zorinos.com/)
 
 ### Screenshot
-              
-![Swagger UI](https://res.cloudinary.com/jhordyess/image/upload/v1706310640/empleados-api-node/swagger.png)
+
+![Swagger UI](https://res.cloudinary.com/jhordyess/image/upload/v1712957082/employees-api-node/swagger.png)
 
 ## How to use for development
 
