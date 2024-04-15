@@ -108,7 +108,7 @@ Take note that this production configuration is just for testing purposes, and m
 
 ## To-Do
 
-- [ ] Fully translate the API documentation to English
+- [x] Fully translate the API documentation to English
 - [ ] Elaborate the Entity-Relationship Diagram
 
 ## Contribution
