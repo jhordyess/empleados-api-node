@@ -35,4 +35,4 @@ RUN yarn --frozen-lockfile
 
 EXPOSE 3000
 
-CMD ["./cmd.prod.sh"]
+ENTRYPOINT [ "/bin/sh", "./cmd.prod.sh" ]
